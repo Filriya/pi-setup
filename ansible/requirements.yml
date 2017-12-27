@@ -1,0 +1,3 @@
+---
+# To install depended roles:
+# ansible-galaxy install -p roles/vendor/ -r requirements.yml
