@@ -1,0 +1,13 @@
+---
+- name:              install apache2
+  apt:               pkg=apache2 state=present
+  become:              yes
+
+- name:        disable ssl version 3.0
+  lineinfile:
+    dest:      /etc/apache2/mods-available/ssl.conf
+    state:     present
+    create:    yes
+    regexp:    "^\\s*SSLProtocol"
+    line:      "SSLProtocol all -SSLv2 -SSLv3"
+  become:      yes

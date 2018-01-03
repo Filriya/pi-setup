@@ -1,0 +1,11 @@
+
+- name:            Install python and pip
+  apt:             pkg={{ item }} state=present
+  with_items:
+    - python2.7
+    - python-pip
+  become:          yes
+
+- name:        install aws-cli
+  pip:
+    name: bottle
