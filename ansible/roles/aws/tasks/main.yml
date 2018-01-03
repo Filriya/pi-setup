@@ -1,0 +1,10 @@
+---
+- name: install aws-cli
+  pip:
+    name: awscli
+
+- name: Copy aws config file
+  copy: src=./config dest=.aws/config 
+
+- name: Copy aws credentials file
+  template: src=./credentials dest=.aws/credentials 

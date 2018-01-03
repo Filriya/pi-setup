@@ -9,4 +9,7 @@
     - jq
     - vim
     - screen
+    - silversearcher-ag
+    - zsh
+    - m4
   become:          yes
