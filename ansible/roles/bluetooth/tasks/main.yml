@@ -1,0 +1,14 @@
+---
+# tasks file for bluetooth
+
+- name:            Install packages
+  apt:             pkg={{ item }} state=present
+  with_items:
+    - bluetooth 
+    - blueman
+    - pi-bluetooth
+    - pulseaudio-module-bluetooth 
+    - python-gobject 
+    - python-gobject-2
+  become:          true
+
