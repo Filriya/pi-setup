@@ -1,0 +1,12 @@
+---
+- name: make local/bin
+  file: path=local/bin state=directory mode=0755
+
+- name: Place ddns script
+  template: src=./ddns.sh dest=local/bin/ddns.sh
+
+- name: Exec DDNS script
+  cron:
+    name: ddns.sh
+    job: /home/{{ ansible_ssh_user }}/local/bin/ddns.sh
+    minute: "*/1"

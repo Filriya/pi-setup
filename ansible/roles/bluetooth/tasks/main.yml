@@ -12,3 +12,8 @@
     - python-gobject-2
   become:          true
 
+- name:            Add user to lp Group
+  user: 
+    name:  "{{  ansible_ssh_user }}"
+    groups: lp
+    append: yes

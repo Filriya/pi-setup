@@ -2,10 +2,12 @@
 - hosts:                      all
   gather_facts:               true
   roles:
-    - apt 
-    - dev-tools
-    - apache
-    - python
-    - aws
-    - bluetooth
+    #    - apt 
+    #    - dev-tools
+    #    - apache
+    #    - python
+    #- ssh
+    #- aws
+    #- bluetooth
+    - ddns
 

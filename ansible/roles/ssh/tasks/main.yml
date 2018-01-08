@@ -1,0 +1,17 @@
+---
+# tasks file for ssh
+#
+- name:           disable password login
+  lineinfile:
+    dest:         /etc/ssh/sshd_config
+    regexp:       "{{ item.regexp }}"
+    line:         "{{ item.line }}"
+    state:        present
+  with_items:
+    - regexp:     '^#?\s*PubkeyAuthentication*'
+      line:       PubkeyAuthentication yes
+    - regexp:     '^#?\s*PasswordAuthentication*'
+      line:       PasswordAuthentication no
+    - regexp:     '^#?\s*PermitRootLogin*'
+      line:       PermitRootLogin no
+  become:         yes
